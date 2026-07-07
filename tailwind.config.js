@@ -1,32 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        ink: "#1C1B17",
-        cream: "#FAF8F3",
-        sage: {
-          DEFAULT: "#7C8371",
-          50: "#F3F4F0",
-          100: "#E4E6DD",
-          200: "#C7CBBB",
-          400: "#96A085",
-          DEEP: "#454B3C",
-        },
-        blush: {
-          DEFAULT: "#D2A898",
-          light: "#E8CCC0",
-        },
+        ink: '#1B1B16',
+        parchment: '#F3EEE0',
+        parchment2: '#E9E2CE',
+        olive: '#42462F',
+        olive2: '#363824',
+        oliveLight: '#7C9070',
+        clay: '#D18E7A',
+        clayDeep: '#B06E5C',
+        gold: '#C9A227',
+        line: 'rgba(27,27,22,0.12)',
+        white2: '#FBF9F4',
       },
       fontFamily: {
-        display: ["Fraunces", "serif"],
-        body: ["Jost", "sans-serif"],
-      },
-      letterSpacing: {
-        widest2: "0.28em",
+        display: ['Fraunces', 'serif'],
+        body: ['Inter', 'sans-serif'],
       },
     },
   },
   plugins: [],
-};
+}
