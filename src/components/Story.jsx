@@ -28,17 +28,17 @@ export default function Story() {
 
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="/images/pic1.png"
+            src={`${import.meta.env.BASE_URL}images/story-1.jpg`}
             alt="Lifestyle photography"
             className="col-span-2 aspect-[16/10] rounded-sm object-cover w-full"
           />
           <img
-            src="/images/pic1.png"
+            src={`${import.meta.env.BASE_URL}images/story-2.jpg`}
             alt="Lifestyle photography"
             className="aspect-square rounded-sm object-cover w-full"
           />
           <img
-            src="/images/pic1.png"
+            src={`${import.meta.env.BASE_URL}images/story-3.jpg`}
             alt="Lifestyle photography"
             className="aspect-square rounded-sm object-cover w-full"
           />

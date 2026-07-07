@@ -81,7 +81,7 @@ export default function Hero() {
           <p className="mt-6 text-base md:text-lg text-ink/70 leading-relaxed max-w-md">
             I help women recognize the attachment patterns quietly running their
             relationships, and move through menopause with clarity instead of
-            chaos. No fixing yourself required, just a clearer way of seeing.
+            chaos. No fixing yourself required &mdash; just a clearer way of seeing.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-6">
@@ -141,7 +141,7 @@ export default function Hero() {
           <ArcLine className="hidden md:block absolute -top-10 left-6 w-40 h-20 text-sage-400" />
 
           <img
-            src="/public/images/lisa.jpg"
+            src={`${import.meta.env.BASE_URL}images/lisa-hero.jpg`}
             alt="Lisa Stefano, Life & Wellness Consultant"
             className="aspect-[4/5] md:aspect-[3/4] w-full rounded-[2rem] object-cover"
           />
