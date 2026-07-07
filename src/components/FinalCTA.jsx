@@ -6,7 +6,7 @@ export default function FinalCTA() {
       <div className="max-w-6xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-14 md:gap-16 items-center">
 
         <img
-            src="/public/images/review.jpg"
+            src={`${import.meta.env.BASE_URL}images/review.jpg`}
             alt="Lisa Stefano, Life & Wellness Consultant"
             className="aspect-[4/5] md:aspect-[3/4] w-full rounded-[2rem] object-cover"
           />

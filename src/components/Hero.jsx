@@ -141,7 +141,7 @@ export default function Hero() {
           <ArcLine className="hidden md:block absolute -top-10 left-6 w-40 h-20 text-sage-400" />
 
           <img
-            src={`${import.meta.env.BASE_URL}images/lisa-hero.jpg`}
+            src={`${import.meta.env.BASE_URL}images/lisa.jpg`}
             alt="Lisa Stefano, Life & Wellness Consultant"
             className="aspect-[4/5] md:aspect-[3/4] w-full rounded-[2rem] object-cover"
           />

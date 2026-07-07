@@ -40,7 +40,7 @@ export default function Highlight() {
         </div>
 
         <img
-            src="/public/images/images.jpg"
+            src={`${import.meta.env.BASE_URL}images/images.jpg`}
             alt="Lisa Stefano, Life & Wellness Consultant"
             className="aspect-[4/5] md:aspect-[3/4] w-full rounded-[2rem] object-cover"
           />
