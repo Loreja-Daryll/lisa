@@ -478,3 +478,9 @@ footer p.desc{ margin-top:16px; font-size:14px; max-width:280px; color:#9a9a8c; 
   100%{ top:36px; opacity:0; }
 }
 @media(max-width:700px){ .hero-scroll{ display:none; } }
+
+/* HERO — cinematic centered layout now lives in styles/hero-cinematic.css
+   (imported in main.tsx). Superseded block removed from here to avoid
+   duplicate/conflicting rules for .hero-cinematic / .hero-bg / .hero-bg-scrim
+   / .hero-center-copy etc. */
+

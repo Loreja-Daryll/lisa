@@ -1,0 +1,115 @@
+/* ==========================================================================
+   HERO — cinematic centered layout (photo removed, background swappable)
+   Append this block at the end of theme.css. It does NOT touch the
+   existing .hero-grid / .hero-visual / .hero-portrait rules above —
+   those just go unused now since Hero.tsx no longer renders that markup.
+   ========================================================================== */
+
+.hero-cinematic{
+  position:relative;
+  min-height:92vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:120px 0 48px;
+  overflow:hidden;
+  text-align:center;
+}
+
+/* Background layer — image or video, always covers the full section,
+   including on mobile, without ever leaving gaps at the edges. */
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+.hero-bg-media{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  z-index:1;
+}
+
+.hero-bg-scrim{
+  z-index:2;
+}
+
+/* Floating transparent overlay (train-bob), matches the Lumora spec.
+   Rendered as a CSS background-image (not <img>) on its own isolated,
+   GPU-promoted layer — this avoids a known class of browser compositing
+   glitches where an <img> can drop out of the paint order once a
+   sibling <video> starts autoplaying and gets promoted to its own layer. */
+@keyframes heroOverlayBob{
+  0%,100%{ transform:translateY(0) scale(1.03); opacity:1; }
+  50%{ transform:translateY(-6px) scale(1.03); opacity:1; }
+}
+.hero-bg-overlay-png{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  animation:heroOverlayBob 3s ease-in-out infinite;
+  pointer-events:none;
+  z-index:3;
+  opacity:1;
+  isolation:isolate;
+  transform:translateZ(0);
+  will-change:transform;
+  backface-visibility:hidden;
+}
+
+/* Dark scrim so white text stays legible over any busy photo/video */
+.hero-bg-scrim{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(20,20,14,0.55) 0%, rgba(20,20,14,0.35) 45%, rgba(20,20,14,0.6) 100%);
+}
+
+/* Centered copy block, sits above the background */
+.hero-center-copy{
+  position:relative;
+  z-index:2;
+  max-width:720px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.hero-center-copy .eyebrow.on-dark{ color:#EAD9B8; }
+
+.hero-center-copy h1{
+  color:var(--white);
+  margin:22px 0 22px;
+}
+.hero-center-copy h1 em{ color:var(--clay); }
+
+.hero-center-copy .lede.on-dark{
+  color:rgba(251,249,244,0.85);
+  max-width:560px;
+}
+
+.hero-center-copy .hero-ctas{
+  justify-content:center;
+}
+
+.see-how.on-dark{ color:var(--white); }
+.circle.on-dark{ border-color:rgba(255,255,255,0.5); color:var(--white); }
+.see-how.on-dark:hover .circle{ background:var(--white); color:var(--ink); }
+
+.trust-row.on-dark{ justify-content:center; }
+.trust-item.on-dark{ color:rgba(251,249,244,0.8); }
+.trust-item.on-dark svg{ border-color:rgba(255,255,255,0.3); }
+
+.hero-scroll.on-dark span{ color:rgba(251,249,244,0.7); }
+.scroll-line.on-dark{ background:rgba(255,255,255,0.25); }
+
+@media(max-width:700px){
+  .hero-cinematic{ min-height:80vh; padding:100px 0 40px; }
+}
